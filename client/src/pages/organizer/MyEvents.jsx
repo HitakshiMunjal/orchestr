@@ -12,6 +12,7 @@ import {
   ShieldCheck,
   BadgeCheck,
   AlertTriangle,
+  Trash2,
 } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
 import { useToast } from "../../context/ToastContext";
@@ -82,12 +83,25 @@ export default function MyEvents() {
     }
   }
 
+  async function handleDeleteBooking(id) {
+    setActionBusyId(id);
+    try {
+      await api.delete(`/bookings/${id}`);
+      toast.success("Event and all associated records permanently deleted.");
+      await loadMyEvents();
+    } catch (err) {
+      toast.error(errMsg(err));
+    } finally {
+      setActionBusyId(null);
+    }
+  }
+
   return (
     <div>
       <PageHeader
         eyebrow="Organizer Portal"
-        title="My Club Events & Venue Locks"
-        subtitle="Track your venue holds through the two-stage approval workflow. Once locked & open, manage door check-ins and attendee rosters."
+        title="My Club Events"
+        subtitle="Manage your scheduled club events, door check-ins, and attendee rosters."
         actions={
           <Link to="/book" className="btn btn-primary">
             <CalendarPlus className="h-4 w-4" /> Book New Venue
@@ -163,6 +177,17 @@ export default function MyEvents() {
                         className="btn btn-danger btn-sm"
                       >
                         <XCircle className="h-3.5 w-3.5" /> Cancel Booking
+                      </ConfirmButton>
+                    )}
+
+                    {user.role === "admin" && (
+                      <ConfirmButton
+                        onConfirm={() => handleDeleteBooking(b._id)}
+                        disabled={isBusy}
+                        confirmLabel="Delete Permanently"
+                        className="btn btn-ghost btn-sm text-rose-400 hover:text-rose-300 hover:bg-rose-500/10"
+                      >
+                        <Trash2 className="h-3.5 w-3.5" /> Delete
                       </ConfirmButton>
                     )}
                   </div>

@@ -518,17 +518,6 @@ export default function Dashboard() {
               </div>
             </div>
           )}
-
-          {/* Live Venue Status Info */}
-          <div className="glass p-5 border-l-2 border-l-teal-400">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-teal-300 mb-1">
-              Active Venue-Lock Protection
-            </h4>
-            <p className="text-xs text-slate-400 leading-relaxed">
-              Every booking holds an automatic 15-minute post-event buffer. No two clubs can claim
-              conflicting venue or equipment slots once submitted.
-            </p>
-          </div>
         </section>
       </div>
     </div>

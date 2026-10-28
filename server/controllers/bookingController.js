@@ -418,6 +418,43 @@ async function getBooking(req, res, next) {
   }
 }
 
+// DELETE /api/bookings/:id (Admin only — permanently purge event and cascade registrations)
+async function deleteEventBooking(req, res, next) {
+  try {
+    const booking = await EventBooking.findById(req.params.id);
+    if (!booking) throw httpError(404, "Booking not found");
+
+    // Cascading deletion: remove all student registrations/tickets tied to this event
+    const regResult = await Registration.deleteMany({ eventId: booking._id });
+
+    // Delete the booking record itself
+    await EventBooking.findByIdAndDelete(booking._id);
+
+    auditBus.emit("log", {
+      actorId: req.user._id,
+      actorRole: req.user.role,
+      action: "BOOKING_PERMANENTLY_DELETED",
+      targetModel: "EventBooking",
+      targetId: booking._id,
+      previousStatus: booking.status,
+      newStatus: null,
+      metadata: {
+        title: booking.title,
+        clubName: booking.clubName,
+        cascadedRegistrationsDeleted: regResult.deletedCount || 0,
+      },
+    });
+
+    return res.json({
+      message: "Event and associated records permanently deleted",
+      deletedBookingId: booking._id,
+      registrationsDeleted: regResult.deletedCount || 0,
+    });
+  } catch (err) {
+    next(err);
+  }
+}
+
 module.exports = {
   createEventBooking,
   inchargeApproveBooking,
@@ -426,4 +463,5 @@ module.exports = {
   completeEvent,
   listBookings,
   getBooking,
+  deleteEventBooking,
 };

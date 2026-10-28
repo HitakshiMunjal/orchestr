@@ -97,7 +97,7 @@ export default function MyTickets() {
       <PageHeader
         eyebrow="My Passes & Credentials"
         title="My Tickets & Attendance Passes"
-        subtitle="Manage your confirmed door passes, track real-time FIFO waitlist positions, and download verified attendance certificates."
+        subtitle="View your event passes, check queue status, and download attendance certificates."
       />
 
       {loading ? (

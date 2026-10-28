@@ -20,7 +20,7 @@ function Splash() {
       <div className="animate-pulse">
         <Logo size={56} />
       </div>
-      <p className="text-sm text-slate-500">Tuning the orchestra…</p>
+      <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Every Event. Perfectly Coordinated.</p>
     </div>
   );
 }

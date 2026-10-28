@@ -109,7 +109,7 @@ export default function Layout() {
           <Logo size={38} />
           <div>
             <p className="font-display text-lg font-bold leading-none text-white">Orchestr</p>
-            <p className="mt-1 text-[10.5px] uppercase tracking-[0.18em] text-slate-500">Venue-Lock Engine</p>
+            <p className="mt-1 text-[10.5px] uppercase tracking-[0.16em] text-slate-500">Every Event. Perfectly Coordinated.</p>
           </div>
         </div>
 

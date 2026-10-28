@@ -83,18 +83,15 @@ export default function Login() {
           <Logo size={44} />
           <div>
             <p className="font-display text-xl font-bold text-white">Orchestr</p>
-            <p className="text-[11px] uppercase tracking-[0.2em] text-slate-500">Campus Venue-Lock Engine</p>
+            <p className="text-[11px] uppercase tracking-[0.18em] text-slate-500">Every Event. Perfectly Coordinated.</p>
           </div>
         </div>
 
-        <div className="max-w-xl animate-fade-up">
-          <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-teal-300/20 bg-teal-300/5 px-3 py-1 text-xs font-medium text-teal-200">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-teal-300" /> Live two-stage venue locking
-          </p>
-          <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight xl:text-6xl">
+        <div className="max-w-xl animate-fade-up my-auto py-10">
+          <h1 className="text-5xl font-extrabold leading-[1.08] tracking-tight xl:text-6xl">
             From room request to <span className="text-gradient">certificate</span>, in one flow.
           </h1>
-          <p className="mt-5 text-base leading-relaxed text-slate-400">
+          <p className="mt-6 text-base leading-relaxed text-slate-400">
             Official venue reservations, capacity-capped registrations, FIFO waitlists and duplicate-proof door
             check-ins — orchestrated for every club on campus.
           </p>
@@ -129,7 +126,10 @@ export default function Login() {
         <div className="w-full max-w-md animate-fade-up">
           <div className="mb-8 flex items-center gap-3 lg:hidden">
             <Logo size={40} />
-            <p className="font-display text-xl font-bold text-white">Orchestr</p>
+            <div>
+              <p className="font-display text-xl font-bold text-white">Orchestr</p>
+              <p className="text-[10px] uppercase tracking-[0.14em] text-slate-500">Every Event. Perfectly Coordinated.</p>
+            </div>
           </div>
 
           <div className="glass bg-ink-900/60 p-7 sm:p-8">

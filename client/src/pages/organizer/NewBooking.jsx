@@ -137,7 +137,7 @@ export default function NewBooking() {
       <PageHeader
         eyebrow="Venue Reservations"
         title="Book Venue & Equipment"
-        subtitle="Submit your club's event request. Valid requests immediately place a provisional lock (with +15m cleanup buffer) preventing any conflicting club from double-booking."
+        subtitle="Request campus spaces and equipment for your club's upcoming events."
       />
 
       {conflictError && (

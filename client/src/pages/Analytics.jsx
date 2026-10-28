@@ -67,8 +67,8 @@ export default function Analytics() {
     <div>
       <PageHeader
         eyebrow="Executive Insights"
-        title="Campus Operational Analytics & Audit Bus"
-        subtitle="Computed via high-performance MongoDB Aggregation Pipelines: turnout rates, no-show deterrence, waitlist conversion efficiency, and immutable system audit logs."
+        title="Campus Event & Venue Analytics"
+        subtitle="Real-time attendance turnout, no-show rates, waitlist conversion, and verified audit logs."
       />
 
       {loading ? (

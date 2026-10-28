@@ -137,7 +137,7 @@ export default function DoorScanner() {
         title="Verified Door QR Check-In"
         subtitle={
           event
-            ? `Scanning entrance for "${event.title}" (${event.clubName}) at ${event.venueId?.name}. Screenshot sharing and duplicate scans are blocked in real-time.`
+            ? `Scanning entrance for "${event.title}" (${event.clubName}) at ${event.venueId?.name || "Campus Venue"}.`
             : "Door entrance scanner"
         }
       />

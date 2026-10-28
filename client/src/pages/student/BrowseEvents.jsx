@@ -83,7 +83,7 @@ export default function BrowseEvents() {
       <PageHeader
         eyebrow="Student Portal"
         title="Open Student Registrations"
-        subtitle="Approved campus events with real-time atomic seat reservation. Zero double-booking, with automatic FIFO waitlist promotion."
+        subtitle="Discover and register for upcoming campus workshops, hackathons, and club activities."
         actions={
           <Link to="/tickets" className="btn btn-ghost btn-sm">
             <Ticket className="h-4 w-4 text-teal-300" /> View My Tickets ({myTickets.length})

@@ -11,6 +11,7 @@ import {
   AlertTriangle,
   ArrowRight,
   Filter,
+  Trash2,
 } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 import { useToast } from "../context/ToastContext";
@@ -23,6 +24,7 @@ import {
   LoadingGrid,
   Modal,
   Spinner,
+  ConfirmButton,
 } from "../components/ui";
 import { fmtDateTime, fmtRange } from "../utils/format";
 
@@ -58,6 +60,16 @@ export default function ApprovalQueue() {
   useEffect(() => {
     loadBookings();
   }, []);
+
+  async function handleDeleteBooking(id) {
+    try {
+      await api.delete(`/bookings/${id}`);
+      toast.success("Event and all associated records permanently deleted.");
+      await loadBookings();
+    } catch (err) {
+      toast.error(errMsg(err));
+    }
+  }
 
   function handleOpenAction(booking, type) {
     setSelectedBooking(booking);
@@ -129,8 +141,8 @@ export default function ApprovalQueue() {
     <div>
       <PageHeader
         eyebrow="Governance & Approvals"
-        title="Sequential Two-Stage Approval Queue"
-        subtitle="Stage 1: Assigned Venue In-Charge approves room availability → Stage 2: OSA Dean locks venue and opens student registration."
+        title="Venue Approval Queue"
+        subtitle="Review and sanction event requests for assigned campus venues and equipment."
       />
 
       {/* Tab Filter */}
@@ -244,6 +256,16 @@ export default function ApprovalQueue() {
                       >
                         <XCircle className="h-4 w-4" /> Reject
                       </button>
+                    )}
+
+                    {isAdmin && (
+                      <ConfirmButton
+                        onConfirm={() => handleDeleteBooking(b._id)}
+                        confirmLabel="Delete Permanently"
+                        className="btn btn-ghost btn-sm text-rose-400 hover:text-rose-300 hover:bg-rose-500/10"
+                      >
+                        <Trash2 className="h-4 w-4" /> Delete
+                      </ConfirmButton>
                     )}
                   </div>
                 </div>

@@ -15,6 +15,7 @@ const {
   completeEvent,
   listBookings,
   getBooking,
+  deleteEventBooking,
 } = require("../controllers/bookingController");
 const {
   registerForEvent,
@@ -76,6 +77,12 @@ router.patch(
   verifyToken,
   requireRole("organizer", "osa_dean", "admin"),
   completeEvent
+);
+router.delete(
+  "/bookings/:id",
+  verifyToken,
+  requireRole("admin"),
+  deleteEventBooking
 );
 
 // Student Registration, Waitlist & Verified QR Door Check-In
