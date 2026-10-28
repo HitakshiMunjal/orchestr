@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Production builds
+dist/
+**/dist/
+
+# Environment secrets
+.env
+**/.env
+.env.local
+
+# Logs
+*.log
+**/*.log
+npm-debug.log*
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+
