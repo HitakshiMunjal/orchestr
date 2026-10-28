@@ -254,7 +254,7 @@ export default function Dashboard() {
                   icon={BadgeCheck}
                   label="Forwarded / Approved"
                   value={stats?.approvedEvents ?? 0}
-                  hint="To OSA Dean or locked"
+                  hint="Forwarded to Dean or locked"
                   tone="emerald"
                   delay={100}
                 />
@@ -275,7 +275,7 @@ export default function Dashboard() {
                   icon={BadgeCheck}
                   label="Stage 2 Final Queue"
                   value={stats?.pendingDean ?? 0}
-                  hint="Pending OSA Dean venue-lock"
+                  hint="Pending Dean approval"
                   tone="violet"
                   delay={0}
                 />

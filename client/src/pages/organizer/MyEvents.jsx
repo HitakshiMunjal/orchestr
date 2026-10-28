@@ -240,7 +240,7 @@ export default function MyEvents() {
                     )}
                     {b.deanApproval?.remarks && (
                       <p className="text-slate-300">
-                        <span className="text-violet-300 font-semibold">OSA Dean Note:</span>{" "}
+                        <span className="text-violet-300 font-semibold">Dean Note:</span>{" "}
                         {b.deanApproval.remarks}
                       </p>
                     )}

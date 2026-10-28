@@ -77,8 +77,8 @@ export default function ApprovalQueue() {
     setRemarks(
       type === "approve"
         ? isIncharge
-          ? "Venue verified and available. Approved for OSA Dean review."
-          : "Final venue lock approved by OSA Dean. Event open for student registration."
+          ? "Venue verified and available. Approved for Dean review."
+          : "Final venue lock approved by Dean. Event open for student registration."
         : ""
     );
   }
@@ -93,12 +93,12 @@ export default function ApprovalQueue() {
           await api.patch(`/bookings/${selectedBooking._id}/incharge-approve`, {
             remarks,
           });
-          toast.success("Stage 1 In-Charge Approval recorded! Forwarded to OSA Dean.");
+          toast.success("Stage 1 In-Charge Approval recorded! Forwarded to Dean.");
         } else if (selectedBooking.status === "PENDING_OSA_DEAN") {
           await api.patch(`/bookings/${selectedBooking._id}/dean-approve`, {
             remarks,
           });
-          toast.success("Stage 2 OSA Dean Approval recorded! Venue officially locked & open for students.");
+          toast.success("Stage 2 Dean Approval recorded! Venue officially locked & open for students.");
         }
       } else {
         const res = await api.patch(`/bookings/${selectedBooking._id}/cancel-or-reject`, {
@@ -339,7 +339,7 @@ export default function ApprovalQueue() {
           actionType === "approve"
             ? selectedBooking?.status === "PENDING_INCHARGE"
               ? `Stage 1: Venue In-Charge Approval`
-              : `Stage 2: OSA Dean Final Venue-Lock`
+              : `Stage 2: Dean Final Venue-Lock`
             : `Reject Booking Request`
         }
         footer={

@@ -2,7 +2,7 @@ export const ROLE_LABELS = {
   student: "Student",
   organizer: "Club Organizer",
   incharge: "Venue In-Charge",
-  osa_dean: "OSA Dean",
+  osa_dean: "Dean",
   admin: "Administrator",
 };
 

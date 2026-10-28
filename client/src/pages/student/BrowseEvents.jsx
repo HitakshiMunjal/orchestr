@@ -97,7 +97,7 @@ export default function BrowseEvents() {
         <EmptyState
           icon={CalendarCheck}
           title="No open events available"
-          message="There are currently no events open for registration. Once venue bookings are approved by In-Charges and the OSA Dean, they appear here."
+          message="There are currently no events open for registration. Once venue bookings are approved by In-Charges and the Dean, they appear here."
         />
       ) : (
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

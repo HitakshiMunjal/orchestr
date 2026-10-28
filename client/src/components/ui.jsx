@@ -3,7 +3,7 @@ import { Check, Loader2, X } from "lucide-react";
 
 const STATUS_STYLES = {
   PENDING_INCHARGE: { label: "Awaiting In-Charge", cls: "bg-amber-400/10 text-amber-300 ring-amber-400/30" },
-  PENDING_OSA_DEAN: { label: "Awaiting OSA Dean", cls: "bg-violet-400/10 text-violet-300 ring-violet-400/30" },
+  PENDING_OSA_DEAN: { label: "Awaiting Dean", cls: "bg-violet-400/10 text-violet-300 ring-violet-400/30" },
   APPROVED_OPEN: { label: "Locked · Open", cls: "bg-emerald-400/10 text-emerald-300 ring-emerald-400/30" },
   COMPLETED: { label: "Completed", cls: "bg-sky-400/10 text-sky-300 ring-sky-400/30" },
   REJECTED: { label: "Rejected", cls: "bg-rose-400/10 text-rose-300 ring-rose-400/30" },
@@ -26,7 +26,7 @@ export function StatusBadge({ status }) {
   );
 }
 
-const PIPELINE_STEPS = ["Hold Placed", "In-Charge", "OSA Dean Lock", "Completed"];
+const PIPELINE_STEPS = ["Hold Placed", "In-Charge", "Dean Approval", "Completed"];
 const REACHED_INDEX = { PENDING_INCHARGE: 0, PENDING_OSA_DEAN: 1, APPROVED_OPEN: 2, COMPLETED: 3 };
 
 /** Visualizes PENDING_INCHARGE -> PENDING_OSA_DEAN -> APPROVED_OPEN -> COMPLETED */

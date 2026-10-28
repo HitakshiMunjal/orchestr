@@ -28,14 +28,14 @@ const DEMO_ACCOUNTS = [
   { id: "demo-student", role: "Student", email: "student@orchestr.edu", icon: GraduationCap, tone: "text-teal-300 bg-teal-400/10" },
   { id: "demo-organizer", role: "Organizer", email: "organizer@orchestr.edu", icon: Megaphone, tone: "text-sky-300 bg-sky-400/10" },
   { id: "demo-incharge", role: "In-Charge", email: "incharge@orchestr.edu", icon: ShieldCheck, tone: "text-amber-300 bg-amber-400/10" },
-  { id: "demo-dean", role: "OSA Dean", email: "dean@orchestr.edu", icon: BadgeCheck, tone: "text-violet-300 bg-violet-400/10" },
+  { id: "demo-dean", role: "Dean", email: "dean@orchestr.edu", icon: BadgeCheck, tone: "text-violet-300 bg-violet-400/10" },
   { id: "demo-admin", role: "Admin", email: "admin@orchestr.edu", icon: Crown, tone: "text-rose-300 bg-rose-400/10" },
 ];
 
 const FLOW = [
   { icon: Building2, title: "Resource Catalog", text: "Venues & gear with capacity and in-charges" },
   { icon: Lock, title: "Provisional Hold", text: "Conflict-checked with a 15-min cleanup buffer" },
-  { icon: BadgeCheck, title: "Two-Stage Lock", text: "In-Charge → OSA Dean sequential approval" },
+  { icon: BadgeCheck, title: "Two-Stage Approval", text: "In-Charge → Dean sequential sanction" },
   { icon: ListOrdered, title: "Atomic Seats + FIFO", text: "Zero overbooking, auto waitlist promotion" },
   { icon: ScanLine, title: "Door QR Check-In", text: "Screenshot-sharing blocked at the door" },
   { icon: Award, title: "Certificates & Insights", text: "Streamed certificates and turnout analytics" },
